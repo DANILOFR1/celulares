@@ -21,12 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Dicas de tamanho para as senhas
     const passwordHints = {
-        'Camila': '7 letras',
-        'Júlia': '10 letras',
-        'Diego': '5 letras',
-        'Beatriz': '8 letras',
-        'Lucas': '4 letras',
-        'Henrique': '7 letras'
+        'Camila': '7 a 9 letras',
+        'Júlia': '8 a 10 letras',
+        'Diego': '5 a 7 letras',
+        'Beatriz': '6 a 8 letras',
+        'Lucas': '4 a 6 letras',
+        'Henrique': '7 a 9 letras'
     };
     
     // Função para tratar erros de carregamento de imagem
