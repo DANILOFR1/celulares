@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celulares - Jogo de Investigação</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#128C7E">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Celulares dos Personagens</h1>
+        <div class="phones-container">
+            <div class="phone" data-owner="Julia">
+                <div class="phone-image-container">
+                    <img src="Júlia Martins.png" alt="Júlia Martins">
+                </div>
+                <h2>Júlia Martins</h2>
+                <div class="phone-icon"><i class="fas fa-mobile-alt"></i></div>
+            </div>
+            <div class="phone" data-owner="Camila">
+                <div class="phone-image-container">
+                    <img src="Camila Sanches.png" alt="Camila Sanches">
+                </div>
+                <h2>Camila Sanches</h2>
+                <div class="phone-icon"><i class="fas fa-mobile-alt"></i></div>
+            </div>
+            <div class="phone" data-owner="Henrique">
+                <div class="phone-image-container">
+                    <img src="Henrique Torres.png" alt="Henrique Torres">
+                </div>
+                <h2>Henrique Torres</h2>
+                <div class="phone-icon"><i class="fas fa-mobile-alt"></i></div>
+            </div>
+            <div class="phone" data-owner="Diego">
+                <div class="phone-image-container">
+                    <img src="Diego Carvalho.png" alt="Diego Carvalho">
+                </div>
+                <h2>Diego Carvalho</h2>
+                <div class="phone-icon"><i class="fas fa-mobile-alt"></i></div>
+            </div>
+            <div class="phone" data-owner="Lucas">
+                <div class="phone-image-container">
+                    <img src="Lucas Lima.png" alt="Lucas Lima">
+                </div>
+                <h2>Lucas Lima</h2>
+                <div class="phone-icon"><i class="fas fa-mobile-alt"></i></div>
+            </div>
+            <div class="phone" data-owner="Beatriz">
+                <div class="phone-image-container">
+                    <img src="Beatriz Lopes.png" alt="Beatriz Lopes">
+                </div>
+                <h2>Beatriz Lopes</h2>
+                <div class="phone-icon"><i class="fas fa-mobile-alt"></i></div>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            Este jogo é original de Instagram <a href="https://www.instagram.com/jogosartesanaisrangel" target="_blank">@jogosartesanaisrangel</a>. Jogo Registrado com direitos reservados ao Danilo Freitas Rangel, rastreável via blockchain. Valorize os criadores de jogos artesanais. By Danilo Freitas Rangel <a href="https://www.instagram.com/biologorangel" target="_blank">@biologorangel</a>
+        </footer>
+    </div>
+
+    <div id="chatModal" class="modal">
+        <div class="modal-content">
+            <div class="chat-header">
+                <div class="back-button">&larr;</div>
+                <div class="chat-contact">
+                    <img id="contactImage" src="" alt="">
+                    <span id="contactName"></span>
+                </div>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <!-- Mensagens serão inseridas via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/chat-data.js"></script>
+    <script>
+        // Registra o Service Worker para o PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(reg => console.log('Service Worker registrado', reg))
+                .catch(err => console.log('Erro ao registrar Service Worker', err));
+        }
+    </script>
+</body>
+</html> 
