@@ -9,6 +9,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Adicionar tratamento de erro para imagens
     contactImage.addEventListener('error', handleImageError);
     
+    // Senhas para cada personagem
+    const passwords = {
+        'Camila': 'jalapão',
+        'Júlia': 'justiceira',
+        'Diego': 'gopro',
+        'Beatriz': 'tormenta',
+        'Lucas': 'voto',
+        'Henrique': 'domínio'
+    };
+    
+    // Dicas de tamanho para as senhas
+    const passwordHints = {
+        'Camila': '7 letras',
+        'Júlia': '10 letras',
+        'Diego': '5 letras',
+        'Beatriz': '8 letras',
+        'Lucas': '4 letras',
+        'Henrique': '7 letras'
+    };
+    
     // Função para tratar erros de carregamento de imagem
     function handleImageError(e) {
         const img = e.target;
@@ -45,10 +65,79 @@ document.addEventListener('DOMContentLoaded', () => {
         'Grupo': 'Grupo'
     };
     
+    // Função para verificar senha
+    function checkPassword(owner) {
+        const name = nameMapping[owner];
+        const hint = passwordHints[name];
+        
+        // Cria o diálogo de senha
+        const passwordDialog = document.createElement('div');
+        passwordDialog.className = 'password-dialog';
+        
+        passwordDialog.innerHTML = `
+            <div class="password-content">
+                <h3>Telefone de ${name}</h3>
+                <p>Digite a senha para desbloquear</p>
+                <p class="password-hint">Dica: ${hint}</p>
+                <p class="password-clue">Procure por pistas nos itens pessoais do personagem</p>
+                <input type="password" id="phone-password" class="password-input" placeholder="Senha">
+                <div class="password-buttons">
+                    <button class="password-cancel">Cancelar</button>
+                    <button class="password-submit">Desbloquear</button>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(passwordDialog);
+        
+        // Foca no campo de entrada
+        const passwordInput = document.getElementById('phone-password');
+        passwordInput.focus();
+        
+        // Adiciona evento para o botão de envio
+        return new Promise((resolve) => {
+            const submitButton = passwordDialog.querySelector('.password-submit');
+            const cancelButton = passwordDialog.querySelector('.password-cancel');
+            
+            submitButton.addEventListener('click', () => {
+                const enteredPassword = passwordInput.value.toLowerCase().trim();
+                if (enteredPassword === passwords[name]) {
+                    document.body.removeChild(passwordDialog);
+                    resolve(true);
+                } else {
+                    passwordInput.classList.add('error');
+                    setTimeout(() => {
+                        passwordInput.classList.remove('error');
+                    }, 500);
+                }
+            });
+            
+            cancelButton.addEventListener('click', () => {
+                document.body.removeChild(passwordDialog);
+                resolve(false);
+            });
+            
+            // Permitir envio com Enter
+            passwordInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    submitButton.click();
+                }
+            });
+        });
+    }
+    
     // Adiciona evento de clique para cada telefone
     phoneElements.forEach(phone => {
-        phone.addEventListener('click', () => {
+        phone.addEventListener('click', async () => {
             currentPhone = phone.dataset.owner;
+            
+            // Verifica a senha
+            const isPasswordCorrect = await checkPassword(currentPhone);
+            
+            if (!isPasswordCorrect) {
+                return;
+            }
+            
             const availableChatsForPhone = availableChats[currentPhone];
             
             if (availableChatsForPhone.length > 0) {

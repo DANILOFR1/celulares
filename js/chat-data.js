@@ -278,6 +278,69 @@ const chats = {
             { sender: "Julia", text: "traz o celular", time: "07:07" },
             { sender: "Bia", text: "indo", time: "07:08" }
         ]
+    },
+    
+    // Conversa entre Henrique e Diego
+    Henrique_Diego: {
+        name: "Conversa – Henrique & Diego",
+        info: "Esta conversa está disponível apenas no celular de Henrique.",
+        start: "22:17 | Sexta-feira, 14 de janeiro",
+        end: "22:24",
+        messages: [
+            { sender: "Henrique", text: "tá tudo muito calmo pro seu gosto, né?", time: "22:17" },
+            { sender: "Diego", text: "como assim?", time: "22:18" },
+            { sender: "Henrique", text: "você sempre gostou de ver o circo pegar fogo", time: "22:18" },
+            { sender: "Henrique", text: "e agora tá todo mundo fingindo que é só mais uma viagem feliz", time: "22:18" },
+            { sender: "Diego", text: "não tô fingindo nada", time: "22:19" },
+            { sender: "Diego", text: "só tô tentando curtir", time: "22:19" },
+            { sender: "Henrique", text: "sei…", time: "22:19" },
+            { sender: "Henrique", text: "mas você viu como a princesa tá sensível, né?", time: "22:19" },
+            { sender: "Diego", text: "quem?", time: "22:20" },
+            { sender: "Henrique", text: "a Camila, ué", time: "22:20" },
+            { sender: "Henrique", text: "toda vez que eu chego perto ela congela", time: "22:20" },
+            { sender: "Diego", text: "talvez porque você não sabe respeitar o espaço dos outros", time: "22:20" },
+            { sender: "Henrique", text: "ou talvez ela saiba que eu sei de mais coisas do que parece", time: "22:21" },
+            { sender: "Diego", text: "cara… se você tá me testando, para", time: "22:21" },
+            { sender: "Henrique", text: "não tô testando nada", time: "22:22" },
+            { sender: "Henrique", text: "só dizendo que… às vezes guardar coisa demais dá refluxo", time: "22:22" },
+            { sender: "Diego", text: "você tá bebendo?", time: "22:22" },
+            { sender: "Henrique", text: "só o suficiente pra falar umas verdades", time: "22:23" },
+            { sender: "Henrique", text: "mas relaxa… não vou estourar nada hoje", time: "22:23" },
+            { sender: "Diego", text: "faz o que quiser, Henrique", time: "22:24" },
+            { sender: "Diego", text: "mas depois não diz que ninguém avisou", time: "22:24" }
+        ]
+    },
+    
+    // Conversa entre Bia e Lucas
+    Bia_Lucas: {
+        name: "Conversa – Bia & Lucas",
+        info: "Esta conversa está disponível apenas no celular da Bia.",
+        start: "00:40 | Sábado, 15 de janeiro",
+        end: "00:47",
+        messages: [
+            { sender: "Lucas", text: "às vezes eu acho que todo mundo aqui só finge", time: "00:40" },
+            { sender: "Bia", text: "como assim?", time: "00:40" },
+            { sender: "Lucas", text: "que tá tudo bem", time: "00:41" },
+            { sender: "Lucas", text: "que somos todos amigos", time: "00:41" },
+            { sender: "Lucas", text: "que o passado não importa", time: "00:41" },
+            { sender: "Bia", text: "tá filosófico hoje hein", time: "00:42" },
+            { sender: "Lucas", text: "tô só cansado", time: "00:42" },
+            { sender: "Lucas", text: "cansado de ver gente abusando dos outros e saindo impune", time: "00:42" },
+            { sender: "Bia", text: "tá falando do Henrique?", time: "00:43" },
+            { sender: "Lucas", text: "tô falando de justiça", time: "00:43" },
+            { sender: "Lucas", text: "ou da falta dela", time: "00:43" },
+            { sender: "Bia", text: "você tá me assustando", time: "00:44" },
+            { sender: "Bia", text: "aconteceu alguma coisa?", time: "00:44" },
+            { sender: "Lucas", text: "ainda não", time: "00:44" },
+            { sender: "Lucas", text: "mas vai acontecer", time: "00:44" },
+            { sender: "Bia", text: "Lucas...", time: "00:45" },
+            { sender: "Bia", text: "não faz nada que você possa se arrepender", time: "00:45" },
+            { sender: "Lucas", text: "a única coisa que eu me arrependo", time: "00:46" },
+            { sender: "Lucas", text: "é de não ter agido antes", time: "00:46" },
+            { sender: "Bia", text: "você não tá pensando em fazer uma loucura, né?", time: "00:47" },
+            { sender: "Lucas", text: "não se preocupa", time: "00:47" },
+            { sender: "Lucas", text: "vai dar tudo certo", time: "00:47" }
+        ]
     }
 };
 
@@ -294,6 +357,7 @@ const availableChats = {
         { id: "Grupo_Arraial", with: "Grupo" }
     ],
     Henrique: [
+        { id: "Henrique_Diego", with: "Diego" },
         { id: "Grupo_Arraial", with: "Grupo" }
     ],
     Diego: [
@@ -304,6 +368,7 @@ const availableChats = {
         { id: "Grupo_Arraial", with: "Grupo" }
     ],
     Beatriz: [
+        { id: "Bia_Lucas", with: "Lucas" },
         { id: "Grupo_Arraial", with: "Grupo" }
     ]
 }; 
